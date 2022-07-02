@@ -20,7 +20,10 @@ if __name__ == "__main__":
 
 @app.route('/users', methods=['POST'])
 def register_user() -> str:
-    """Registers a new user if it does not exist before"""
+    """
+    Registers a new user if it does not exists
+    
+    """
     try:
         email = request.form['email']
         password = request.form['password']
