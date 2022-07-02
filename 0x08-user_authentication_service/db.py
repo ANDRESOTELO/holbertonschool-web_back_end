@@ -11,7 +11,7 @@ from user import Base, User
 
 class DB:
     """
-    DB class
+    DataBase class
     """
 
     def __init__(self) -> None:
