@@ -24,9 +24,9 @@ class DB:
         self.__session = None
 
     @property
-    def __session(self) -> Session:
+    def _session(self) -> Session:
         """
-        Memoized session object
+        Private method that returns a session
         """
         if self.__session is None:
             DBSession = sessionmaker(bind=self._engine)
