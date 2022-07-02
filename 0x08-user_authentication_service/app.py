@@ -15,10 +15,6 @@ def welcome() -> str:
     return jsonify({"message": "Bienvenue"})
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port="5000")
-
-
 @app.route('/users', methods=['POST'])
 def register_user() -> str:
     """
@@ -37,3 +33,7 @@ def register_user() -> str:
 
     msg = {"email": email, "message": "user created"}
     return jsonify(msg)
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port="5000")
