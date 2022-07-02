@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-from flask import Flask, jsonify
 from auth import Auth
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 AUTH = Auth()
+
 
 @app.route('/', methods=['GET'], strict_slashes=False)
 def welcome() -> str:
@@ -22,7 +23,6 @@ if __name__ == "__main__":
 def register_user() -> str:
     """
     Registers a new user if it does not exists
-    
     """
     try:
         email = request.form['email']
