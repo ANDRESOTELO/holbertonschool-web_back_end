@@ -10,12 +10,12 @@ from typing import Union
 class Cache:
     """Cache Class"""
     def __init__(self):
-        """Constructor"""
+        """Constructor Method"""
         self._redis = redis.Redis()
         self._redis.flushdb()
 
 
-    def store(self, data: Union[Union[Union[str, int], float], bytes]) -> str:
+    def store(self, data: Union[str, int, float, bytes]) -> str:
         """
         Store method
         Returns -> Key
