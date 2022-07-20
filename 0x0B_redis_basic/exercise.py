@@ -93,9 +93,8 @@ class Cache:
         self._redis.set(random_key, data)
         return random_key
 
-
     def get(self, key: str,
-        fn: Optional[Callable] = None) -> Union[str, bytes, int, float]:
+            fn: Optional[Callable] = None) -> Union[str, bytes, int, float]:
         """
         Get method that take a key string and
         convert to original type
@@ -105,14 +104,12 @@ class Cache:
             value = fn(value)
         return value
 
-
     def get_str(self, key: str) -> str:
         """
         Automatically parametrize Cache.get to str
         """
         value = self._redis.get(key)
         return value.decode('utf-8')
-
 
     def get_int(self, key: str) -> int:
         """
