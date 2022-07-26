@@ -9,7 +9,8 @@ def logger(a: dict) -> int:
     """
     Method docs
     """
-    return MongoClient('mongodb://127.0.0.1:27017').logs.nginx.count_documents(a)
+    mong = 'mongodb://127.0.0.1:27017'
+    return MongoClient(mong).logs.nginx.count_documents(a)
 
 
 def main():
